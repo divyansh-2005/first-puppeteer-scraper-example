@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Categorized by Author</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .quote-section {
+            margin-bottom: 2rem;
+        }
+        .quote {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .quote-text {
+            font-style: italic;
+        }
+        .quote-author {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <% for (let author in quotesByAuthor) { %>
+        <div class="author-section">
+            <h2>Author: <%= author %></h2>
+            <% quotesByAuthor[author].forEach(quote => { %>
+                <div class="quote">
+                    <p class="quote-text">"<%= quote.text %>"</p>
+                    <p class="quote-author">- <%= quote.author %></p>
+                    <p>Tags: <%= quote.tags.join(', ') %></p>
+                </div>
+            <% }) %>    
+        </div>
+    <% } %>
+</body>
+</html>

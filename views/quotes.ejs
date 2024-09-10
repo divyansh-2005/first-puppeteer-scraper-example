@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quote {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .quote-text {
+            font-style: italic;
+            color: #555;
+        }
+        .quote-author {
+            font-weight: bold;
+            color: #333;
+        }
+        .tags {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quotes</h1>
+        <% quotes.forEach(quote => { %>
+            <div class="quote">
+                <p class="quote-text">"<%= quote.text %>"</p>
+                <p class="quote-author">- <%= quote.author %></p>
+                <p class="tags">Tags: <%= quote.tags.join(', ') %></p>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
